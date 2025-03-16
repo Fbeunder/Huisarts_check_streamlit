@@ -33,27 +33,28 @@
    - Commentaar in code
    - STATUS: Voltooid
 
+5. **Connectie met Google Apps Script** ✅
+   - Verbeterde OpenAI bridge met robuuste foutafhandeling
+   - Toegevoegd retry-mechanisme voor tijdelijke verbindingsproblemen
+   - Testscript toegevoegd voor validatie van de verbinding
+   - Gedetailleerde instructies in README voor Apps Script setup
+   - STATUS: Voltooid (Pull Request #2)
+
 ## Huidige Must-haves
 
-1. **Connectie met Google Apps Script** 🔄
-   - Update de instructies en code om de verbinding met het Google Apps Script endpoint te testen
-   - Zorg voor correcte foutafhandeling als het endpoint niet beschikbaar is
-   - Voeg gedetailleerde instructies toe in de README over hoe het Apps Script te implementeren
-   - STATUS: Nog te implementeren
-
-2. **Implementatie van echte Google Sheets verbinding** 🔄
+1. **Implementatie van echte Google Sheets verbinding** 🔄
    - Implementeer de daadwerkelijke verbinding met Google Sheets
    - Vervang mock implementaties door echte database operaties
    - Test CRUD-operaties op gebruikers en praktijken
    - STATUS: Nog te implementeren
 
-3. **Email-notificatie integratie** 🔄
+2. **Email-notificatie integratie** 🔄
    - Implementeer daadwerkelijke email verzending (bijvoorbeeld via SMTP of een email service)
    - Configureer emailsjablonen
    - Test notificaties bij statuswijzigingen
    - STATUS: Nog te implementeren
 
-4. **End-to-end testen** 🔄
+3. **End-to-end testen** 🔄
    - Test volledige applicatie workflow
    - Zorg dat alle componenten correct met elkaar communiceren
    - Documenteer testresultaten
@@ -83,29 +84,27 @@
    - Statistieken over openingstijden
    - Trends in patiëntenaanname
 
-## Opmerkingen:
+## Opmerkingen
 - Voor de werking van deze applicatie is een gedeployd Google Apps Script nodig dat als bridge functioneert naar de OpenAI API
 - De applicatie vereist Google Sheets API-toegang voor database functionaliteit
 
-## Volgende stappen:
-1. **Connectie met Google Apps Script testen en verbeteren**
-   - Implementeer robuuste error handling voor API-aanroepen
-   - Documenteer hoe het Apps Script endpoint op te zetten
-   - Voeg instructies toe voor het configureren van OpenAI API-sleutels in Apps Script
+## Volgende stappen
 
-2. **Google Sheets integratie voltooien**
+1. **Google Sheets integratie voltooien**
    - Implementeer echte database operaties in plaats van mocks
+   - Vervang de huidige mock-implementaties in data_layer.py
+   - Zorg dat alle CRUD-operaties werken met de Google Sheets API
    - Test lezen en schrijven van data naar Google Sheets
    - Zorg voor correcte error handling bij connectieproblemen
 
-3. **Email-functionaliteit implementeren**
+2. **Email-functionaliteit implementeren**
    - Kies en implementeer een email service
    - Maak emailsjablonen voor verschillende soorten notificaties
    - Test of notificaties correct worden verzonden bij statuswijzigingen
 
-4. **End-to-end testen uitvoeren**
+3. **End-to-end testen uitvoeren**
    - Test de volledige applicatie op functionaliteit
    - Documenteer eventuele bugs of verbeterpunten
    - Update README met configuratie- en gebruiksinstructies
 
-De bovenstaande must-haves zijn noodzakelijk voor de basiswerking van de applicatie. De huidige implementatie bevat al een functionele UI en de basisarchitectuur, maar de echte integratie met externe services (Google Sheets, Apps Script, email) moet nog worden voltooid voor een volledig werkende applicatie.
+De bovenstaande must-haves zijn noodzakelijk voor de basiswerking van de applicatie. We hebben al goede voortgang gemaakt met een functionele UI, de basisarchitectuur, en nu een robuuste OpenAI bridge. De volgende stappen zijn de integratie met Google Sheets en email functionaliteit om een volledig werkende applicatie te krijgen.
