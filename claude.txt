@@ -1,0 +1,116 @@
+# Projectoverzicht: Huisarts open voor inschrijving - Streamlit versie
+
+## Beschrijving
+Een Streamlit-versie van de oorspronkelijke Apps Script applicatie die huisartsenpraktijk websites monitort om te controleren of ze nieuwe patiënten aannemen. Gebruikers kunnen zich aanmelden, een persoonlijke lijst met URLs van huisartsen opgeven, en worden via e-mail op de hoogte gebracht wanneer een huisarts van status verandert naar het aannemen van nieuwe patiënten. Deze versie communiceert nog steeds met Google Apps Script voor de OpenAI-integratie, maar biedt een verbeterde gebruikersinterface met Streamlit.
+
+## Architectuur: Modulestructuur
+De applicatie is opgebouwd volgens een modulaire structuur voor Streamlit, waarin elke module een specifieke functionaliteit afhandelt:
+
+### Modulestructuur:
+1. Hoofdapplicatie
+   - app.py (Hoofdbestand met entry points en module initialisatie)
+   - requirements.txt (Lijst met Python-afhankelijkheden)
+   - .env.example (Voorbeeld omgevingsvariabelen voor configuratie)
+
+2. Front-end Modules (Streamlit Pages)
+   - pages/dashboard.py (Dashboard pagina)
+   - pages/practices.py (Huisartsenpraktijken beheer pagina)
+   - pages/settings.py (Instellingen pagina)
+   - pages/about.py (Over pagina)
+
+3. Back-end Modules
+   - modules/data_layer.py (Database interacties)
+   - modules/auth_service.py (Gebruikersbeheer)
+   - modules/website_checker.py (Website controle functionaliteit)
+   - modules/openai_bridge.py (Integratie met OpenAI via Apps Script)
+   - modules/email_service.py (Email notificatie service)
+   - modules/logger.py (Logging functionaliteit)
+
+4. Documentatie
+   - README.md (Uitgebreide installatie- en configuratiegids)
+
+## Per module details:
+
+### app.py
+- Status: Geïmplementeerd
+- Bestandsnaam: app.py
+- Functionaliteit: Hoofdbestand voor de Streamlit-applicatie, bevat de basis UI-structuur, login/logout functionaliteit en home page
+- Afhankelijkheid: modules/auth_service.py, modules/data_layer.py, modules/website_checker.py
+
+### requirements.txt
+- Status: Geïmplementeerd
+- Bestandsnaam: requirements.txt
+- Functionaliteit: Specificeert de vereiste Python packages voor de applicatie
+- Afhankelijkheid: Geen
+
+### .env.example
+- Status: Geïmplementeerd
+- Bestandsnaam: .env.example
+- Functionaliteit: Voorbeeld configuratiebestand voor omgevingsvariabelen
+- Afhankelijkheid: Geen
+
+### pages/dashboard.py
+- Status: Geïmplementeerd
+- Bestandsnaam: pages/dashboard.py
+- Functionaliteit: Dashboard pagina die een overzicht toont van huisartsenpraktijken en hun status
+- Afhankelijkheid: modules/auth_service.py, modules/data_layer.py, modules/website_checker.py
+
+### pages/practices.py
+- Status: Geïmplementeerd
+- Bestandsnaam: pages/practices.py
+- Functionaliteit: Pagina voor het beheren van huisartsenpraktijken (toevoegen, bewerken, verwijderen)
+- Afhankelijkheid: modules/auth_service.py, modules/data_layer.py, modules/website_checker.py
+
+### pages/settings.py
+- Status: Geïmplementeerd
+- Bestandsnaam: pages/settings.py
+- Functionaliteit: Pagina voor het aanpassen van gebruikersinstellingen
+- Afhankelijkheid: modules/auth_service.py, modules/data_layer.py
+
+### pages/about.py
+- Status: Geïmplementeerd
+- Bestandsnaam: pages/about.py
+- Functionaliteit: Informatiepagina over de applicatie
+- Afhankelijkheid: Geen
+
+### modules/auth_service.py
+- Status: Geïmplementeerd
+- Bestandsnaam: modules/auth_service.py
+- Functionaliteit: Beheert gebruikersdatabase en authenticatie functionaliteit
+- Afhankelijkheid: modules/data_layer.py
+
+### modules/data_layer.py
+- Status: Geïmplementeerd
+- Bestandsnaam: modules/data_layer.py
+- Functionaliteit: Handelt database interacties af met Google Spreadsheet als dataopslag
+- Afhankelijkheid: Geen
+
+### modules/website_checker.py
+- Status: Geïmplementeerd
+- Bestandsnaam: modules/website_checker.py
+- Functionaliteit: Beheert het proces van het controleren van websites via de OpenAI bridge
+- Afhankelijkheid: modules/data_layer.py, modules/openai_bridge.py
+
+### modules/openai_bridge.py
+- Status: Geïmplementeerd
+- Bestandsnaam: modules/openai_bridge.py
+- Functionaliteit: Communiceert met de Apps Script endpoint om OpenAI API-aanroepen te doen
+- Afhankelijkheid: Geen
+
+### modules/email_service.py
+- Status: Geïmplementeerd
+- Bestandsnaam: modules/email_service.py
+- Functionaliteit: Beheert het verzenden van e-mailnotificaties aan gebruikers bij statuswijzigingen
+- Afhankelijkheid: modules/data_layer.py
+
+### modules/logger.py
+- Status: Geïmplementeerd
+- Bestandsnaam: modules/logger.py
+- Functionaliteit: Voorziet in logging functionaliteit voor de applicatie
+- Afhankelijkheid: Geen
+
+### README.md
+- Status: Geïmplementeerd
+- Bestandsnaam: README.md
+- Functionaliteit: Bevat uitgebreide documentatie voor installatie, configuratie en gebruik van de applicatie
+- Afhankelijkheid: Geen
