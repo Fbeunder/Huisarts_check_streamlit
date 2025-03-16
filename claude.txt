@@ -11,6 +11,7 @@ De applicatie is opgebouwd volgens een modulaire structuur voor Streamlit, waari
    - app.py (Hoofdbestand met entry points en module initialisatie)
    - requirements.txt (Lijst met Python-afhankelijkheden)
    - .env.example (Voorbeeld omgevingsvariabelen voor configuratie)
+   - test_openai_bridge.py (Script voor het testen van de OpenAI bridge)
 
 2. Front-end Modules (Streamlit Pages)
    - pages/dashboard.py (Dashboard pagina)
@@ -49,6 +50,12 @@ De applicatie is opgebouwd volgens een modulaire structuur voor Streamlit, waari
 - Functionaliteit: Voorbeeld configuratiebestand voor omgevingsvariabelen
 - Afhankelijkheid: Geen
 
+### test_openai_bridge.py
+- Status: Geïmplementeerd
+- Bestandsnaam: test_openai_bridge.py
+- Functionaliteit: Script voor het testen van de verbinding met het Google Apps Script endpoint
+- Afhankelijkheid: modules/openai_bridge.py, modules/logger.py
+
 ### pages/dashboard.py
 - Status: Geïmplementeerd
 - Bestandsnaam: pages/dashboard.py
@@ -80,7 +87,7 @@ De applicatie is opgebouwd volgens een modulaire structuur voor Streamlit, waari
 - Afhankelijkheid: modules/data_layer.py
 
 ### modules/data_layer.py
-- Status: Geïmplementeerd
+- Status: Geïmplementeerd (met mock data, echte implementatie gepland)
 - Bestandsnaam: modules/data_layer.py
 - Functionaliteit: Handelt database interacties af met Google Spreadsheet als dataopslag
 - Afhankelijkheid: Geen
@@ -92,13 +99,13 @@ De applicatie is opgebouwd volgens een modulaire structuur voor Streamlit, waari
 - Afhankelijkheid: modules/data_layer.py, modules/openai_bridge.py
 
 ### modules/openai_bridge.py
-- Status: Geïmplementeerd
+- Status: Geïmplementeerd (verbeterd met robuuste foutafhandeling en retry-mechanismen)
 - Bestandsnaam: modules/openai_bridge.py
-- Functionaliteit: Communiceert met de Apps Script endpoint om OpenAI API-aanroepen te doen
-- Afhankelijkheid: Geen
+- Functionaliteit: Communiceert met de Apps Script endpoint om OpenAI API-aanroepen te doen, met fallback naar mock data indien nodig
+- Afhankelijkheid: modules/logger.py
 
 ### modules/email_service.py
-- Status: Geïmplementeerd
+- Status: Geïmplementeerd (met mock functionaliteit, echte implementatie gepland)
 - Bestandsnaam: modules/email_service.py
 - Functionaliteit: Beheert het verzenden van e-mailnotificaties aan gebruikers bij statuswijzigingen
 - Afhankelijkheid: modules/data_layer.py
@@ -110,7 +117,7 @@ De applicatie is opgebouwd volgens een modulaire structuur voor Streamlit, waari
 - Afhankelijkheid: Geen
 
 ### README.md
-- Status: Geïmplementeerd
+- Status: Geïmplementeerd (bijgewerkt met gedetailleerde Google Apps Script instructies)
 - Bestandsnaam: README.md
 - Functionaliteit: Bevat uitgebreide documentatie voor installatie, configuratie en gebruik van de applicatie
 - Afhankelijkheid: Geen
