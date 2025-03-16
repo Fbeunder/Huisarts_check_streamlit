@@ -1,0 +1,111 @@
+# Ontwikkelstappen voor Huisarts open voor inschrijving - Streamlit versie
+
+## Voltooide Must-haves
+
+1. **Basisstructuur en architectuur** ✅
+   - Setup Streamlit project met app.py en pages directory
+   - Implementatie van basis modulaire structuur
+   - Configuratie met .env ondersteuning
+   - Requirements.txt voor Python-afhankelijkheden
+   - STATUS: Voltooid
+
+2. **Front-end UI componenten** ✅
+   - Hoofd navigatiestructuur met sidebar
+   - Login/logout functionaliteit
+   - Dashboard pagina
+   - Huisartsenpraktijken beheerpagina
+   - Instellingenpagina
+   - Over pagina
+   - STATUS: Voltooid
+
+3. **Back-end modules** ✅
+   - Data layer voor Google Sheets integratie
+   - Auth service voor gebruikersbeheer
+   - Website checker voor monitoring
+   - OpenAI bridge voor communicatie met Apps Script
+   - Email service voor notificaties (mock implementatie)
+   - Logging functionaliteit
+   - STATUS: Voltooid
+
+4. **Documentatie en setup** ✅
+   - README.md met installatie-instructies
+   - .env.example met configuratievoorbeeld
+   - Commentaar in code
+   - STATUS: Voltooid
+
+## Huidige Must-haves
+
+1. **Connectie met Google Apps Script** 🔄
+   - Update de instructies en code om de verbinding met het Google Apps Script endpoint te testen
+   - Zorg voor correcte foutafhandeling als het endpoint niet beschikbaar is
+   - Voeg gedetailleerde instructies toe in de README over hoe het Apps Script te implementeren
+   - STATUS: Nog te implementeren
+
+2. **Implementatie van echte Google Sheets verbinding** 🔄
+   - Implementeer de daadwerkelijke verbinding met Google Sheets
+   - Vervang mock implementaties door echte database operaties
+   - Test CRUD-operaties op gebruikers en praktijken
+   - STATUS: Nog te implementeren
+
+3. **Email-notificatie integratie** 🔄
+   - Implementeer daadwerkelijke email verzending (bijvoorbeeld via SMTP of een email service)
+   - Configureer emailsjablonen
+   - Test notificaties bij statuswijzigingen
+   - STATUS: Nog te implementeren
+
+4. **End-to-end testen** 🔄
+   - Test volledige applicatie workflow
+   - Zorg dat alle componenten correct met elkaar communiceren
+   - Documenteer testresultaten
+   - STATUS: Nog te implementeren
+
+## Nice-to-haves
+
+1. **Verbeterde UI/UX**
+   - Toevoegen van datumfilters voor statuswijzigingen
+   - Grafieken en visualisaties van statuswijzigingen
+   - Verbeterde mobiele ondersteuning
+   - Donkere modus ondersteuning
+
+2. **Geavanceerde functionaliteit**
+   - Batch import van huisartsenpraktijken via CSV
+   - Exporteren van data naar CSV/Excel
+   - Geplande controles instellen per praktijk
+   - Geografische weergave van praktijken
+
+3. **Verbeterde authenticatie**
+   - Implementatie van OAuth met Google, Microsoft, etc.
+   - Multi-factor authenticatie
+   - Rollen en permissies (admin, gebruiker, etc.)
+
+4. **Uitgebreide rapportages**
+   - Gedetailleerde historie van statuswijzigingen
+   - Statistieken over openingstijden
+   - Trends in patiëntenaanname
+
+## Opmerkingen:
+- Voor de werking van deze applicatie is een gedeployd Google Apps Script nodig dat als bridge functioneert naar de OpenAI API
+- De applicatie vereist Google Sheets API-toegang voor database functionaliteit
+
+## Volgende stappen:
+1. **Connectie met Google Apps Script testen en verbeteren**
+   - Implementeer robuuste error handling voor API-aanroepen
+   - Documenteer hoe het Apps Script endpoint op te zetten
+   - Voeg instructies toe voor het configureren van OpenAI API-sleutels in Apps Script
+
+2. **Google Sheets integratie voltooien**
+   - Implementeer echte database operaties in plaats van mocks
+   - Test lezen en schrijven van data naar Google Sheets
+   - Zorg voor correcte error handling bij connectieproblemen
+
+3. **Email-functionaliteit implementeren**
+   - Kies en implementeer een email service
+   - Maak emailsjablonen voor verschillende soorten notificaties
+   - Test of notificaties correct worden verzonden bij statuswijzigingen
+
+4. **End-to-end testen uitvoeren**
+   - Test de volledige applicatie op functionaliteit
+   - Documenteer eventuele bugs of verbeterpunten
+   - Update README met configuratie- en gebruiksinstructies
+
+De bovenstaande must-haves zijn noodzakelijk voor de basiswerking van de applicatie. De huidige implementatie bevat al een functionele UI en de basisarchitectuur, maar de echte integratie met externe services (Google Sheets, Apps Script, email) moet nog worden voltooid voor een volledig werkende applicatie.
